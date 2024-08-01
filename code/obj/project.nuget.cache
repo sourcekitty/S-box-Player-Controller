@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "i22zjqJDAz4=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Stone\\Documents\\s&box projects\\plrcntrl\\Code\\plrcntrl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Stone\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Stone\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Stone\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

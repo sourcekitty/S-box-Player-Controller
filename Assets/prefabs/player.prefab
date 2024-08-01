@@ -1,0 +1,220 @@
+{
+  "RootObject": {
+    "__guid": "5ecb4d0d-714b-4b89-82d1-a02eb91c2a99",
+    "Flags": 0,
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "52b4cae3-58ce-4b67-ae85-1ebe019f56b2",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 71,
+        "IgnoreLayers": "player",
+        "Radius": 8,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+        "__guid": "ac4590cc-74ed-4731-8963-a23b30d8c213",
+        "BodyWeight": 1,
+        "EyeSource": {
+          "_type": "gameobject",
+          "go": "dc9acc7d-add5-4caa-aec0-4d79ae15009f"
+        },
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "Height": 1,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "component_id": "259b8747-ed9c-4dba-b836-6284307223bf",
+          "go": "a85249ac-3324-499b-8f3e-3038c9db0679",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "PlayerMovement",
+        "__guid": "d748a3e5-711d-4eda-ab74-6a9012e037dc",
+        "AirControl": 0.1,
+        "Body": {
+          "_type": "gameobject",
+          "go": "a85249ac-3324-499b-8f3e-3038c9db0679"
+        },
+        "CrouchSpeed": 90,
+        "GroundControl": 4,
+        "Head": {
+          "_type": "gameobject",
+          "go": "dc9acc7d-add5-4caa-aec0-4d79ae15009f"
+        },
+        "JumpForce": 325,
+        "MaxForce": 50,
+        "MoveRot": {
+          "_type": "gameobject",
+          "go": "a1e301a3-57d0-4f1b-9905-1ff27a7a757d"
+        },
+        "RunSpeed": 280,
+        "Speed": 180,
+        "WalkSpeed": 95
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "a85249ac-3324-499b-8f3e-3038c9db0679",
+        "Flags": 0,
+        "Name": "Body",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "259b8747-ed9c-4dba-b836-6284307223bf",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          }
+        ]
+      },
+      {
+        "__guid": "dc9acc7d-add5-4caa-aec0-4d79ae15009f",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,63",
+        "Enabled": true
+      },
+      {
+        "__guid": "efdace90-ba26-4f1e-98e6-440d540c15dd",
+        "Flags": 0,
+        "Name": "Camera",
+        "Position": "-150,-0.000004069464,63",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "9e2a9c55-80f0-42da-a9db-0012a9574f75",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 70,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 5000,
+            "ZNear": 1
+          },
+          {
+            "__type": "CameraMovement",
+            "__guid": "b4ee7a34-29b7-477a-93f4-1c47f80c7e16",
+            "AltDistance": 0,
+            "Body": {
+              "_type": "gameobject",
+              "go": "a85249ac-3324-499b-8f3e-3038c9db0679"
+            },
+            "CanSwitchView": true,
+            "Distance": 150,
+            "Head": {
+              "_type": "gameobject",
+              "go": "dc9acc7d-add5-4caa-aec0-4d79ae15009f"
+            },
+            "Player": {
+              "_type": "component",
+              "component_id": "d748a3e5-711d-4eda-ab74-6a9012e037dc",
+              "go": "5ecb4d0d-714b-4b89-82d1-a02eb91c2a99",
+              "component_type": "PlayerMovement"
+            },
+            "SideDistance": 20
+          },
+          {
+            "__type": "Sandbox.Bloom",
+            "__guid": "c4843fba-2795-4503-837c-15e83c33f988",
+            "BloomColor": {
+              "color": [
+                {
+                  "c": "1,1,1,1"
+                },
+                {
+                  "t": 1,
+                  "c": "1,1,1,1"
+                }
+              ],
+              "alpha": []
+            },
+            "BloomCurve": [
+              {
+                "y": 0.5
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "Mode": "Additive",
+            "Strength": 0.5,
+            "Threshold": 0.5,
+            "ThresholdWidth": 0.5
+          },
+          {
+            "__type": "Sandbox.Tonemapping",
+            "__guid": "f6ea90b8-36fa-4c31-a5ff-5a694b97b599",
+            "__version": 1,
+            "ExposureBias": 2,
+            "ExposureCompensation": 0,
+            "ExposureMethod": "RGB",
+            "MaximumExposure": 2,
+            "MinimumExposure": 1,
+            "Mode": "HableFilmic",
+            "Rate": 1
+          },
+          {
+            "__type": "Sandbox.Sharpen",
+            "__guid": "21ff9508-607b-4c41-96a6-0028aade01cc",
+            "Scale": 0.2
+          },
+          {
+            "__type": "Sandbox.AmbientOcclusion",
+            "__guid": "fe37b5fb-f3bf-4e8e-828d-34af8bb08c31",
+            "__enabled": false,
+            "FalloffDistance": 1,
+            "Intensity": 8,
+            "Quality": "High",
+            "Radius": 32
+          },
+          {
+            "__type": "Sandbox.Vignette",
+            "__guid": "a1d8cd5a-cdb8-4558-bdaf-fe51bf68e895",
+            "__enabled": false,
+            "Center": "0.5,0.5",
+            "Color": "0.31163,0,0,1",
+            "Intensity": 0.65,
+            "Roundness": 1,
+            "Smoothness": 1
+          }
+        ]
+      },
+      {
+        "__guid": "a1e301a3-57d0-4f1b-9905-1ff27a7a757d",
+        "Flags": 0,
+        "Name": "MoveDirection",
+        "Enabled": true
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
